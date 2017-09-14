@@ -134,7 +134,7 @@ def infer():
         input=infer_data,
         field=['prob', 'id'])
 
-    # parse beam result and print 
+    # parse beam result and print
     source_dict, target_dict = paddle.dataset.wmt14.get_dict(dict_size)
     beam_probs, beam_sentences = parse_beam_search_result(beam_result,
                                                           target_dict)

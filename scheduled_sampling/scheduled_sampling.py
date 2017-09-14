@@ -313,8 +313,8 @@ def main():
         beam_size = 3
         for i in xrange(gen_num):
             print "\n*******************************************************\n"
-            print "src:", ' '.join(
-                [src_dict.get(w) for w in gen_data[i][0]]), "\n"
+            print "src:", ' '.join([src_dict.get(w)
+                                    for w in gen_data[i][0]]), "\n"
             for j in xrange(beam_size):
                 print "prob = %f:" % (prob[i][j]), seq_list[i * beam_size + j]
 

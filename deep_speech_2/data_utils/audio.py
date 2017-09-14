@@ -523,8 +523,8 @@ class AudioSegment(object):
                                                               self.sample_rate))
         if noise.duration < self.duration:
             raise ValueError("Noise signal (%f sec) must be at least as long as"
-                             " base signal (%f sec)." %
-                             (noise.duration, self.duration))
+                             " base signal (%f sec)." % (noise.duration,
+                                                         self.duration))
         noise_gain_db = min(self.rms_db - noise.rms_db - snr_dB, max_gain_db)
         noise_new = copy.deepcopy(noise)
         noise_new.random_subsegment(self.duration, rng=rng)

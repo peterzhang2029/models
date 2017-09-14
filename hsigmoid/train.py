@@ -33,9 +33,8 @@ def main(save_dir="models"):
                 result = trainer.test(
                     paddle.batch(
                         paddle.dataset.imikolov.test(word_dict, 5), 32))
-                logger.info(
-                    "Pass %d, Batch %d, Cost %f, Test Cost %f" %
-                    (event.pass_id, event.batch_id, event.cost, result.cost))
+                logger.info("Pass %d, Batch %d, Cost %f, Test Cost %f" % (
+                    event.pass_id, event.batch_id, event.cost, result.cost))
 
     parameters = paddle.parameters.create(cost)
     adam_optimizer = paddle.optimizer.Adam(

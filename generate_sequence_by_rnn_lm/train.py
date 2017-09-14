@@ -68,8 +68,8 @@ def train(topology,
         if isinstance(event, paddle.event.EndPass):
             if test_reader is not None:
                 result = trainer.test(reader=test_reader)
-                logger.info("Test with Pass %d, %s" %
-                            (event.pass_id, result.metrics))
+                logger.info("Test with Pass %d, %s" % (event.pass_id,
+                                                       result.metrics))
             save_name = os.path.join(model_save_dir, "rnn_lm_pass_%05d.tar.gz" %
                                      (event.pass_id))
             with gzip.open(save_name, "w") as f:

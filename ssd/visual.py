@@ -22,8 +22,8 @@ for line in open(infer_file):
     ymax = int(round(ymax))
 
     img = path_to_im[img_path]
-    cv2.rectangle(img, (xmin, ymin), (xmax, ymax),
-                  (0, (1 - xmin) * 255, xmin * 255), 2)
+    cv2.rectangle(img, (xmin, ymin), (xmax, ymax), (0, (1 - xmin) * 255,
+                                                    xmin * 255), 2)
 
 for img_path in path_to_im:
     im = path_to_im[img_path]

@@ -63,6 +63,6 @@ class TextFeaturizer(object):
         with codecs.open(vocab_filepath, 'r', 'utf-8') as file:
             vocab_lines.extend(file.readlines())
         vocab_list = [line[:-1] for line in vocab_lines]
-        vocab_dict = dict(
-            [(token, id) for (id, token) in enumerate(vocab_list)])
+        vocab_dict = dict([(token, id)
+                           for (id, token) in enumerate(vocab_list)])
         return vocab_dict, vocab_list

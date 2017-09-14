@@ -181,6 +181,6 @@ class AudioFeaturizer(object):
         d_mfcc_feat = np.transpose(d_mfcc_feat)
         dd_mfcc_feat = np.transpose(dd_mfcc_feat)
         # concat above three features
-        concat_mfcc_feat = np.concatenate(
-            (mfcc_feat, d_mfcc_feat, dd_mfcc_feat))
+        concat_mfcc_feat = np.concatenate((mfcc_feat, d_mfcc_feat,
+                                           dd_mfcc_feat))
         return concat_mfcc_feat
